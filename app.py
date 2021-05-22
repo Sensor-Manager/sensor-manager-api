@@ -12,6 +12,10 @@ devices=[
      },
 ]
 
+@app.route("/")
+def home():
+    return "Welcome to Grain Manager API"
+
 @app.route("/devices",methods=["GET"])
 def getDevices():
     return jsonify(devices)
