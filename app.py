@@ -40,7 +40,6 @@ def editDeviceData(id):
     f.close()
     for device in devices:
         if int(id) == device["id"]:
-            device["name"]=input_json['name']
             device["temperature"]=input_json['temperature']
             device["humidity"]=input_json['humidity']
     f=open("data.json","w")
