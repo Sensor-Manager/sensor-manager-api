@@ -45,8 +45,8 @@ def editDeviceData(id):
 @app.route('/test',methods=['POST'])
 def testing():
     input_json = request.get_json(force=True)
-    print(type(input_json))
-    dictToReturn = {'editSuccessful':True}
+    print(json.dumps(input_json))
+
     return jsonify(input_json)
 
 if __name__ == '__main__':
