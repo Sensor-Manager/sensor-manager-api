@@ -24,6 +24,14 @@ def getDevices():
     print(jsonify(devices))
     return jsonify(devices)
 
+@app.route("/testdevices",methods=["GET"])
+def getTestDevices():
+    f=open("test.json","r")
+    devices = json.loads(f.read())
+    f.close()
+    print(jsonify(devices))
+    return jsonify(devices)
+
 @app.route("/editdata/<id>",methods=["POST"])
 def editDeviceData(id):
     input_json = request.get_json(force=True)
@@ -45,8 +53,10 @@ def editDeviceData(id):
 @app.route('/test',methods=['POST'])
 def testing():
     input_json = request.get_json(force=True)
-    print(json.dumps(input_json))
-
+    jsonString= json.dumps(input_json)
+    f=open("test.json","w")
+    f.write(jsonString)
+    f.close()
     return jsonify(input_json)
 
 if __name__ == '__main__':
