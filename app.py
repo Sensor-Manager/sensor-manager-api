@@ -2,15 +2,6 @@ from flask import Flask, json,request,jsonify
 
 app = Flask(__name__)
 
-
-# devices=[
-#     {'id': 0,
-#      'name': 'GM IoT',
-#      'temperature': '30°C',
-#      'humidity': '84%',
-#      },
-# ]
-
 @app.route("/")
 def home():
     return "Welcome to Grain Manager API"
